@@ -1,0 +1,98 @@
+###get_Login
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"testcomercio@correo.com",
+    "password":"test"
+}
+
+### getPages HU3.1
+GET http://localhost:3000/api/page_ruta/Pagina
+
+
+###createPage HU2.1/HU2.2
+//Logging
+//tipo->Comercio
+POST http://localhost:3000/api/page_ruta
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Rjb21lcmNpb0Bjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoiY29tZXJjaW9zIiwiaWF0IjoxNjg1MzQ1NTI2LCJleHAiOjE2ODUzNTI3MjZ9.LWscvL07OfeCyvL-ZDJE9rKAjm49CpX84XArFwYLBdw
+
+{
+  "url": "test1.com",
+  "ciudad": "Madrid-calle-Mayor",
+  "actividad": "Farmacia",
+  "titulo": "cccomponentes",
+  "resumen": "Página del luisbomba3.com",
+  "textos_body": "html...",
+  "fotos_body": "url fotos..",
+  "email_propietario": "testcomercio@correo.com",
+  "datos_no_modificables": {
+    "scoring": "5",
+    "puntuacion": [70],
+    "resenas": ["Hola"]
+  }
+}
+
+### getPage HU3.1
+GET http://localhost:3000/api/page_ruta/Pagina/test11.com
+
+### getPageCity HU3.2
+//Nombre de la ciudad
+//Cualquier Usuario
+GET http://localhost:3000/api/page_ruta/Pagina/Ciudad/Madrid-calle-Mayor
+
+
+### get_Page_Cityact
+//Nombre de la ciudad y Actividad y ordene por scoring HU3.3/3.4
+//Cualquier Usuario
+http://localhost:3000/api/page_ruta/Pagina/Ciudad/Madrid-calle-Mayor/Actividad/Moda
+
+### updatePage HU2.1/HU2.2
+//Logging
+//tipo->Comercio
+
+PUT http://localhost:3000/api/page_ruta/Pagina/actualizar/test1.com HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Rjb21lcmNpb0Bjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoiY29tZXJjaW9zIiwiaWF0IjoxNjg1MzQ1NTI2LCJleHAiOjE2ODUzNTI3MjZ9.LWscvL07OfeCyvL-ZDJE9rKAjm49CpX84XArFwYLBdw
+
+{
+    "fotos_body": "https://cdn.pccomponentes.com/img/logos/logo-zara.svg",
+    "textos_body": "Expertos en ropa con un servicio 5 estrellas"
+}
+
+### deletePage HU2.3
+//Logging
+//tipo->Comercio
+DELETE http://localhost:3000/api/page_ruta/Pagina/urltest.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Rjb21lcmNpbzJAY29ycmVvLmNvbSIsInRpcG9fdXN1YXJpbyI6ImNvbWVyY2lvcyIsImlhdCI6MTY4NTE5OTg3OCwiZXhwIjoxNjg1MjA3MDc4fQ.uiBMEEV4QwwU1R6kDFE41fbbW239Nz1yyWJ-u8FvZa0
+
+###*************************************************************************************
+
+
+###get_Login
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "pedro@correo.com",
+    "password": "test"
+}
+
+### upt_User
+//Solo usuario tipo register
+// el id_usuario es el correo
+PUT http://localhost:3000/api/page_ruta/Pagina/Votacion/test1.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvQGNvcnJlby5jb20iLCJ0aXBvX3VzdWFyaW8iOiJyZWdpc3RlciIsImlhdCI6MTY4NTM0NjE2NSwiZXhwIjoxNjg1MzUzMzY1fQ.eBgzC_V6Z1iUoguiNv83auWNMbzUZDfM6cv1Ow-AeVU
+Content-Type: application/json
+
+{
+    "datos_no_modificables": {
+        "puntuacion":[50],
+        "resenas": ["Bien hecho"]
+    }
+  
+}
+

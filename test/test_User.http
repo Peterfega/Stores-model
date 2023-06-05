@@ -1,0 +1,93 @@
+
+
+### get_Users
+GET http://localhost:3000/api/user_ruta/Usuario
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1aXNib21iYUBjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoicmVnaXN0ZXIiLCJpYXQiOjE2ODQ0MzMzNTAsImV4cCI6MTY4NDQ0MDU1MH0.I1z2m9W2lkIwaodUoSp6eXf16G18AT0lCn01LrktHa4
+
+###createUser CREACION DEL USER REGISTER/ANOM/COMERCIO
+POST  http://localhost:3000/api/user_ruta
+Content-Type: application/json
+
+{
+    "tipo_usuario": "register",
+    "nombre": "Pedro",
+    "email": "pedro@correo.com",
+    "password": "test",
+    "edad": "22",
+    "ciudad": "Sevilla",
+    "intereses": "Informatica",
+    "recibir_ofertas": true
+}
+
+
+###get_Login REGISTER LOGIN
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"fega@correo.com",
+    "password":"pedro"
+}
+
+### get_User
+GET http://localhost:3000/api/user_ruta/Usuario/pedro@correo.com
+Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvQGNvcnJlby5jb20iLCJ0aXBvX3VzdWFyaW8iOiJyZWdpc3RlciIsImlhdCI6MTY4NDQzNDgwNiwiZXhwIjoxNjg0NDQyMDA2fQ.krGwR34KIrmB5TNPBTqt_ORkTbNvODOlrDqR8cDoDyU
+
+
+
+
+
+#************************************************************************************************
+
+###get_Login 
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"testcomercio2@correo.com",
+    "password":"test"
+}
+
+### get_UserCity HU2.4
+//Logging
+//tipo->Comercio
+GET http://localhost:3000/api/user_ruta/Usuario/ciudad/Sevilla/Intereses/Informatica
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Rjb21lcmNpb0Bjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoiY29tZXJjaW9zIiwiaWF0IjoxNjg1MzQ2MDI5LCJleHAiOjE2ODUzNTMyMjl9.2fiGOIM3QQhkyUMvQQYxYVyx5lD_qnUZ7H-2_CdDM5U
+#************************************************************************************************
+
+###get_Login
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "pedro@correo.com",
+    "password": "test"
+}
+
+### upt_User HU4.1
+//Solo usuario tipo register
+// el id_usuario es el correo
+PUT http://localhost:3000/api/user_ruta/Usuario/luistest@correo.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvdGVzdEBjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoicmVnaXN0ZXIiLCJpYXQiOjE2ODUwMTc4NzIsImV4cCI6MTY4NTAyNTA3Mn0.Ip5_Cnktqzs-puDBV3WCr0IiKlus1ZA-nfZjmiM5k1U
+Content-Type: application/json
+
+{
+    "ciudad": "Betis",
+    "intereses": "VideoGames"
+  
+}
+
+### del_User HU4.2
+//Solo usuario tipo register
+// el id_usuario es el correo
+DELETE http://localhost:3000/api/user_ruta/Usuario/pedrotest@correo.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBlZHJvdGVzdEBjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoicmVnaXN0ZXIiLCJpYXQiOjE2ODUwMTc4NzIsImV4cCI6MTY4NTAyNTA3Mn0.Ip5_Cnktqzs-puDBV3WCr0IiKlus1ZA-nfZjmiM5k1U
+
+
+
+
+
+

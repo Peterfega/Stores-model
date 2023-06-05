@@ -1,0 +1,47 @@
+###
+GET http://localhost:3000/api/pruebas
+###
+POST  http://localhost:3000/api/pruebas
+Content-Type: application/json
+
+{
+    "data": "data"
+}
+###
+POST  http://localhost:3000/api/pruebas/controller
+Content-Type: application/json
+
+{
+    "data": "data"
+}
+###
+POST  http://localhost:3000/api/pruebas/users
+Content-Type: application/json
+
+{
+    "name": "data",
+    "age": 12,
+    "email": "email2",
+    "role": "user",
+    "password": "example"
+}
+
+###
+GET  http://localhost:3000/api/pruebas/users/email
+
+###
+PUT http://localhost:3000/api/pruebas/users/email
+Content-Type: application/json
+
+{
+    "name": "NEWDATA",
+    "age": 13,
+    "email": "NUEVOMAIL",
+    "role": "user",
+    "password": "example"
+}
+
+
+###
+DELETE  http://localhost:3000/api/pruebas/users/email
+\

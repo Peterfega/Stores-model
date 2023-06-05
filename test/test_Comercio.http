@@ -1,0 +1,72 @@
+###get_Login CREACION DE ADMIN
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"admin2@correo.com",
+    "password":"admin"
+}
+
+###get_Login
+
+POST http://localhost:3000/api/user_ruta/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"Silfredo@correo.com",
+    "password":"456"
+}
+
+### get_Comercio HU1.2
+//Logging
+
+GET http://localhost:3000/api/comercio_ruta/Comercio
+
+
+###crear_Comercio HU1.1
+//Logging
+//Admin
+
+POST  http://localhost:3000/api/comercio_ruta
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoiYWRtaW4iLCJpYXQiOjE2ODQ0ODc1MzksImV4cCI6MTY4NDQ5NDczOX0.GuIA1EDljh6yRyvkA0ZXCwHt_LzBbrLmJw4mh5IxwN8
+
+{
+    "nombre_comercio": "Web2",
+    "cif": "1111111111111",
+    "direccion": "Calle test",
+    "email": "web2@correo.com",
+    "telefono": "111111111"
+}
+
+### get_Comercio
+//Logging
+//tipo->Admin
+
+GET http://localhost:3000/api/comercio_ruta/Comercio/web2@correo.com
+Authorization: Bearer Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMkBjb3JyZW8uY29tIiwidGlwb191c3VhcmlvIjoiYWRtaW4iLCJpYXQiOjE2ODQ0ODc1MzksImV4cCI6MTY4NDQ5NDczOX0.GuIA1EDljh6yRyvkA0ZXCwHt_LzBbrLmJw4mh5IxwN8
+
+
+### upt_Comercio
+//Logging
+//tipo->Admin
+
+PUT http://localhost:3000/api/comercio_ruta/Comercio/Mercadona@gmail.com HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFETUlOQGNvcnJlby5jb20iLCJ0aXBvX3VzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTY4NDQzMDcyNywiZXhwIjoxNjg0NDM3OTI3fQ.X9huBA5D0T6_oUJC24qSmk-GfFCU0GDrflBVZhlaDaA
+
+
+{
+    "direccion": "Osuna"
+  
+}
+
+### del_Comercio HU1.3
+//Logging
+//tipo->Admin
+
+DELETE http://localhost:3000/api/comercio_ruta/Comercio/lidl@gmail.com HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFETUlOQGNvcnJlby5jb20iLCJ0aXBvX3VzdWFyaW8iOiJhZG1pbiIsImlhdCI6MTY4NDQzMDcyNywiZXhwIjoxNjg0NDM3OTI3fQ.X9huBA5D0T6_oUJC24qSmk-GfFCU0GDrflBVZhlaDaA
